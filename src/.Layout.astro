@@ -2,12 +2,14 @@
 export type { Props } from './index.d.ts'
 
 const size = Astro.props.size
+const strokeWidth = Astro.props.strokeWidth
+delete Astro.props.strokeWidth
 delete Astro.props.size
 ---
 
 <svg
 	xmlns="http://www.w3.org/2000/svg"
-	stroke-width={2}
+	stroke-width={strokeWidth ?? 2}
 	width={size ?? 24}
 	height={size ?? 24}
 	stroke="currentColor"
